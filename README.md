@@ -1,6 +1,6 @@
 # Café Fausse Web Application
 
-React (Vite) frontend + Flask backend + PostgreSQL database. No Docker. Local Postgres and npm as requested.
+React (Vite) frontend + Flask backend + PostgreSQL database (local) + npm
 
 ## Requirements
 - macOS
