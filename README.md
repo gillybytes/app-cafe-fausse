@@ -88,14 +88,14 @@ Base URL: `${VITE_API_BASE}/api`
 
 ## 7) Notes
 - Time slots are treated as exact timestamps (minute precision from the UI). Two reservations at the same exact minute share the same slot capacity pool.
-- For real-world use, consider discrete time blocks (e.g., 15-min increments) and migrations (Alembic). This project uses SQLAlchemy metadata create_all for simplicity.
+- This project uses SQLAlchemy metadata create_all for simplicity.
 
 ## 8) Troubleshooting
 - `psycopg2` build issues: ensure Postgres client tools/headers installed (Homebrew). Use `psycopg2-binary` (already included) for easier local installs.
 - CORS errors: confirm backend `CORS_ORIGINS` matches frontend origin (http://localhost:5173).
 - 500 errors: check backend console for stack traces and verify `DATABASE_URL`.
 
-## 9) Deployment (no Docker)
+## 9) Deployment
 - Backend: Render/Fly/Heroku-like. Set `DATABASE_URL` and run via Gunicorn (e.g., `gunicorn 'backend.app:create_app()'`).
 - DB: Managed Postgres (Neon/Supabase) with the same schema.
 - Frontend: `npm run build` then deploy `dist/` to Netlify/Vercel; set `VITE_API_BASE` to your backend URL and rebuild.
